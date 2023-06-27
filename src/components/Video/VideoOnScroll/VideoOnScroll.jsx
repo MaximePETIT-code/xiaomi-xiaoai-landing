@@ -93,6 +93,6 @@ VideoOnScroll.propTypes = {
   className: PropTypes.string,
   count: PropTypes.number.isRequired,
   folder: PropTypes.string.isRequired,
-  pad: PropTypes.number,
+  pad: PropTypes.string,
   extension: PropTypes.string,
 };

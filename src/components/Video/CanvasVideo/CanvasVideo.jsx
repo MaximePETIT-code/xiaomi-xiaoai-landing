@@ -116,7 +116,7 @@ CanvasVideo.displayName = "CanvasVideo";
 CanvasVideo.propTypes = {
   count: PropTypes.number.isRequired,
   folder: PropTypes.string.isRequired,
-  pad: PropTypes.number,
+  pad: PropTypes.string,
   className: PropTypes.string,
   extension: PropTypes.string,
 };
