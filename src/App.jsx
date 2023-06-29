@@ -1,8 +1,9 @@
 import Hero from "./components/sections/Hero/Hero";
 import Introduction from "./components/sections/Introduction/Introduction";
 import ShowProduct from "./components/sections/ShowProduct/ShowProduct";
+import CommingSoon from "./components/sections/CommingSoon/CommingSoon";
 import { VideoOnScroll } from "./components/Video/VideoOnScroll/VideoOnScroll";
-import { Lenis as ReactLenis } from "@studio-freight/react-lenis";
+import { Lenis as ReactLenis, useLenis } from "@studio-freight/react-lenis";
 
 function App() {
   const options = {
@@ -24,6 +25,7 @@ function App() {
           pad={3}
           fadeOut={true}
         />
+        <CommingSoon/>
       </ReactLenis>
     </>
   );

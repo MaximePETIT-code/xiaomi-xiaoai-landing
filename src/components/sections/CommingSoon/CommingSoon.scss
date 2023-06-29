@@ -1,0 +1,29 @@
+.commingSoon{
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__title{
+    font-size: 4rem;
+    line-height: 0.9;
+    margin-bottom: 48px;
+    opacity: 1;
+  }
+
+  &__subtitle{
+    font-size: 3.2rem;
+    font-weight: 200;
+    color: #dedede;
+  }
+  &__subtitle, &__button{
+    opacity: 0;
+  }
+
+  .character{
+    display: inline-block;
+    transform: translateY(0);
+  }
+}
