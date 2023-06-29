@@ -14,11 +14,11 @@ export default function ShowProduct() {
     gsap.to(glowImage, {
       scrollTrigger: {
         trigger: glowImage,
-        start: "top 40%",
+        start: "top 100%",
         end: "bottom 10%",
         scrub: true,
       },
-      width: "900px",
+      width: "700px",
     });
   }, []);
 
@@ -46,7 +46,7 @@ export default function ShowProduct() {
 
       <div className={styles.showProduct__glow}>
         <img
-          src="https://res.cloudinary.com/dvx9zz0jq/image/upload/xiaomi/assets/glow.png"
+          src="https://res.cloudinary.com/dvx9zz0jq/image/upload/xiaomi/assets/glow2.png"
           alt="Xiaomi Xiaoai Pro black"
           ref={glowRef}
         />
