@@ -1,0 +1,13 @@
+.introduction {
+  width: 90vw;
+  // margin: 0 auto;
+  line-height: 1.1;
+  margin: 10vh auto 40vh auto;
+  // display: flex;
+  // justify-content: flex-end;
+
+  &__container {
+    width: 70%;
+    font-size: 4rem;
+  }
+}
