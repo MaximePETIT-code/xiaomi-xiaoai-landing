@@ -1,20 +1,18 @@
 import { useRect } from "@studio-freight/hamo";
-import { useMemo, useCallback, useImperativeHandle, useEffect, useRef, forwardRef } from "react";
+import {
+  useMemo,
+  useCallback,
+  useImperativeHandle,
+  useEffect,
+  useRef,
+  forwardRef,
+} from "react";
 import PropTypes from "prop-types";
 
 const BASE_URL = "https://res.cloudinary.com/dvx9zz0jq/image/upload";
 
 export const CanvasVideo = forwardRef(
-  (
-    {
-      count,
-      folder,
-      pad = 3,
-      className,
-      extension = "png",
-    },
-    ref
-  ) => {
+  ({ count, folder, pad = 3, className, extension = "png" }, ref) => {
     const canvasRef = useRef(null);
     const contextRef = useRef(null);
     const [setWrapperRectRef, rect] = useRect();
@@ -89,12 +87,9 @@ export const CanvasVideo = forwardRef(
     );
 
     return (
-      <div
-        className={className}
-        ref={setWrapperRectRef}
-      >
+      <div className={className} ref={setWrapperRectRef}>
         <canvas
-          className='canvasVideo'
+          className="canvasVideo"
           ref={(node) => {
             canvasRef.current = node;
             if (node) {

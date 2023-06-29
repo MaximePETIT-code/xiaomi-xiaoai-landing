@@ -21,22 +21,7 @@ export function VideoOnScroll({
   useEffect(() => {
     gsap.set(wrapperRef.current, { clearProps: 'all' })
 
-    const timeline1 = gsap
-      .timeline({
-        scrollTrigger: {
-          id: 'video-fade',
-          trigger: wrapperRef.current,
-          start: 'top top+=50%',
-          end: 'top top',
-          scrub: true,
-        },
-      })
-      .from(wrapperRef.current, {
-        opacity: 0,
-        ease: 'none',
-      })
-
-    const timeline2 = gsap
+    const tl = gsap
       .timeline({
         scrollTrigger: {
           id: 'image-fade',
@@ -52,8 +37,7 @@ export function VideoOnScroll({
       })
 
     return () => {
-      timeline1.kill()
-      timeline2.kill()
+      tl.kill()
     }
   }, [])
 
