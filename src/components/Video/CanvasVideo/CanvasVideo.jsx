@@ -7,6 +7,7 @@ import {
   useRef,
   forwardRef,
 } from "react";
+import { useScreenSize } from "../../../Hooks/useScreenSize";
 import PropTypes from "prop-types";
 
 const BASE_URL = "https://res.cloudinary.com/dvx9zz0jq/image/upload";
@@ -17,21 +18,23 @@ export const CanvasVideo = forwardRef(
     const contextRef = useRef(null);
     const [setWrapperRectRef, rect] = useRect();
 
+    const isMobile = useScreenSize(990);
+
+    console.log(isMobile)
+
     const frames = useMemo(
       () =>
         new Array(count).fill(0).map((_, i) => {
           const image = new Image();
           const quality = "q_auto:good,e_sharpen";
-          const width = "w_1920";
-          image.src = `${BASE_URL}/${width},${quality},f_auto${folder}product${(
-            i + 1
-          )
-            .toString()
-            .padStart(pad, "0")}.${extension}`;
+          const width = `${isMobile ? "w_800" : "w_1920"}`;
+          image.src = `${BASE_URL}/${width},${quality},f_auto${folder}product${
+            isMobile ? "-mobile" : ""
+          }${(i + 1).toString().padStart(pad, "0")}.${extension}`;
 
           return image;
         }),
-      [count, pad, folder, extension]
+      [count, pad, folder, extension, isMobile]
     );
 
     useEffect(() => {
