@@ -6,17 +6,19 @@ import CommingSoon from "./components/sections/CommingSoon/CommingSoon";
 import { VideoOnScroll } from "./components/Video/VideoOnScroll/VideoOnScroll";
 import usePageLoaded from "./Hooks/usePageLoaded";
 import { useEffect, useState } from "react";
-import { Lenis as ReactLenis, useLenis } from "@studio-freight/react-lenis";
+import { Lenis as ReactLenis } from "@studio-freight/react-lenis";
 
 function App() {
-  const options = {
+
+  const [smoothScroll, setSmoothScroll] = useState(false)
+  const isPageLoaded = usePageLoaded(1000);
+  const [showLoader, setShowLoader] = useState(true);
+
+  const scrollOptions = {
     lerp: 0.07,
-    smooth: true,
+    smooth: smoothScroll,
     direction: "vertical",
   };
-
-  const isPageLoaded = usePageLoaded(1500);
-  const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {
     if (isPageLoaded) {
@@ -26,22 +28,23 @@ function App() {
 
   return (
     <>
-      {/* <ReactLenis root options={{ ...options }}> */}
-      <Loader showLoader={showLoader} />
-      <main>
-        <Hero />
-        <Introduction />
-        <ShowProduct />
-        <VideoOnScroll
-          folder="/xiaomi/sequence-03/"
-          count={102}
-          extension="png"
-          pad={3}
-          fadeOut={true}
-        />
-        <CommingSoon />
-      </main>
-      {/* </ReactLenis> */}
+      <ReactLenis root options={{ ...scrollOptions }}>
+        <Loader showLoader={showLoader} />
+        <main>
+          <Hero setSmoothScroll = {setSmoothScroll} />
+          <Introduction/>
+          <ShowProduct />
+          <VideoOnScroll
+            folder="/xiaomi/sequence-03/"
+            count={102}
+            extension="png"
+            pad={3}
+            fadeOut={true}
+            setSmoothScroll = {setSmoothScroll}
+          />
+          <CommingSoon />
+        </main>
+      </ReactLenis>
     </>
   );
 }

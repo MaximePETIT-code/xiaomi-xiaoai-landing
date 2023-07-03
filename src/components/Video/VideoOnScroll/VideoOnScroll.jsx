@@ -15,6 +15,7 @@ export function VideoOnScroll({
   pad,
   extension = "png",
   fadeOut = false,
+  setSmoothScroll
 }) {
   const wrapperRef = useRef();
   const videoRef = useRef();
@@ -73,6 +74,18 @@ export function VideoOnScroll({
         scrub: true,
         onUpdate: ({ progress }) => {
           videoRef.current.progress(progress);
+        },
+        onEnter: () => {
+          setSmoothScroll(false);
+        },
+        onLeave: () => {
+          setSmoothScroll(true);
+        },
+        onEnterBack: () => {
+          setSmoothScroll(false);
+        },
+        onLeaveBack: () => {
+          setSmoothScroll(true);
         },
       },
     });

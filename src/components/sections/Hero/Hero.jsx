@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Hero() {
+export default function Hero({setSmoothScroll}) {
   const heroRef = useRef(null);
   const titleRef = useRef(null);
 
@@ -38,12 +38,14 @@ export default function Hero() {
           Xiaomi Xiaoai Pro
         </h1>
       </div>
+      {/* <div className={styles.hero__showProduct}></div> */}
       <VideoOnScroll
         className={styles.video}
         folder="/xiaomi/sequence-01/"
         count={90}
         extension="png"
         pad={2}
+        setSmoothScroll={setSmoothScroll}
       />
     </section>
   );
