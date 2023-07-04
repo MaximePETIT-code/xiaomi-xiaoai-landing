@@ -113,7 +113,7 @@ VideoOnScroll.propTypes = {
   className: PropTypes.string,
   count: PropTypes.number.isRequired,
   folder: PropTypes.string.isRequired,
-  pad: PropTypes.string,
+  pad: PropTypes.number,
   extension: PropTypes.string,
   fadeOut: PropTypes.bool,
   setSmoothScroll: PropTypes.func.isRequired,
