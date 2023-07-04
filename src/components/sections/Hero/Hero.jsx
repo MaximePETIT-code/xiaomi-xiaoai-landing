@@ -42,7 +42,7 @@ export default function Hero({ setSmoothScroll, isPageLoaded }) {
         { y: "600px", scale: 0.9, opacity: 0 },
         {
           y: 0,
-          scale: `${!isMobile ? 1 : 4}`,
+          scale: `${!isMobile ? 1 : 3}`,
           opacity: 1,
           duration: 1.5,
           ease: "power2.out",
@@ -55,7 +55,7 @@ export default function Hero({ setSmoothScroll, isPageLoaded }) {
           {
             opacity: 1,
             y: 0,
-            scale: `${!isMobile ? 1 : 4}`,
+            scale: `${!isMobile ? 1 : 3}`,
             duration: 1.5,
             ease: "power2.out",
             stagger: 0.2,
