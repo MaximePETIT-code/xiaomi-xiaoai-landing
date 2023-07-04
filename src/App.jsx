@@ -31,7 +31,7 @@ function App() {
       <ReactLenis root options={{ ...scrollOptions }}>
         <Loader showLoader={showLoader} />
         <main>
-          <Hero setSmoothScroll = {setSmoothScroll} />
+          <Hero setSmoothScroll = {setSmoothScroll} isPageLoaded={isPageLoaded} />
           <Introduction/>
           <ShowProduct />
           <VideoOnScroll

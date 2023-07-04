@@ -116,4 +116,5 @@ VideoOnScroll.propTypes = {
   pad: PropTypes.string,
   extension: PropTypes.string,
   fadeOut: PropTypes.bool,
+  setSmoothScroll: PropTypes.bool,
 };
