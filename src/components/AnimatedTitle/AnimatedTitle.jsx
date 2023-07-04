@@ -15,7 +15,7 @@ export const AnimatedTitle = ({ children }) => {
       scrollTrigger: {
         trigger: animatedTitleRef.current,
         start: "top 90%",
-        end: "bottom 40%",
+        end: "bottom 50%",
         scrub: true,
       },
     });

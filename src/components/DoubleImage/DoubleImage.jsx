@@ -23,7 +23,7 @@ export default function DoubleImage({ srcs = [] }) {
     imageRefs.current.forEach((imageRef) => {
       tl.fromTo(
         imageRef.current,
-        { y: 0, scale: 1 },
+        { y: 0 },
         { y: "-100px", ease: 'none' },
         0
       );

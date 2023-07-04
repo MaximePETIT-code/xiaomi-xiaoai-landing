@@ -14,8 +14,8 @@ export default function ShowProduct() {
     gsap.to(glowImage, {
       scrollTrigger: {
         trigger: glowImage,
-        start: "top 100%",
-        end: "bottom 10%",
+        start: "top 80%",
+        end: "bottom 30%",
         scrub: true,
       },
       width: "700px",
@@ -46,8 +46,8 @@ export default function ShowProduct() {
 
       <div className={styles.showProduct__glow}>
         <img
-          src="https://res.cloudinary.com/dvx9zz0jq/image/upload/xiaomi/assets/glow2.png"
-          alt="Xiaomi Xiaoai Pro black"
+          src="https://res.cloudinary.com/dvx9zz0jq/image/upload/xiaomi/assets/glow3.png"
+          alt="glow"
           ref={glowRef}
         />
       </div>
