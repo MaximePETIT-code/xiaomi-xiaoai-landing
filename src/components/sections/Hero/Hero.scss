@@ -1,0 +1,50 @@
+.hero {
+
+  &__content {
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    font-size: 5vw;
+
+    @media screen and (max-width: 990px) {
+      font-size: 3rem;
+    }
+
+    &__title {
+      margin-top: 48px;
+      color: #f7f7f7;
+      opacity: 0.8;
+      font-weight: 800;
+      text-align: center;
+    }
+  }
+
+  &__productAnimation {
+    pointer-events: none;
+    position: fixed;
+    top: -60px;
+    left: -3px;
+
+    img {
+      width: 100vw;
+      position: absolute;
+      z-index: 2;
+    }
+
+    img.hero__productAnimation__background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+  }
+
+  &__videoOnScroll {
+    opacity: 0;
+  }
+
+  .character {
+    display: inline-block;
+    transform: translateY(0);
+  }
+}
