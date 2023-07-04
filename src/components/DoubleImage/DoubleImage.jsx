@@ -1,12 +1,14 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useScreenSize } from "../../Hooks/useScreenSize";
 import PropTypes from "prop-types";
 import styles from "./DoubleImage.module.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function DoubleImage({ srcs = [] }) {
+  const isMobile = useScreenSize(990);
   const containerRef = useRef(null);
   const imageRefs = useRef([]);
 
@@ -24,7 +26,7 @@ export default function DoubleImage({ srcs = [] }) {
       tl.fromTo(
         imageRef.current,
         { y: 0 },
-        { y: "-100px", ease: 'none' },
+        { y: `${!isMobile ? '-100px' : '-60px'}`, ease: 'none' },
         0
       );
     });
