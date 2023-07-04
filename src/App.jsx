@@ -18,7 +18,7 @@ function App() {
   const scrollOptions = {
     lerp: 0.07,
     smooth: smoothScroll,
-    direction: "vertical",
+    orientation: "vertical",
   };
 
   useEffect(() => {
