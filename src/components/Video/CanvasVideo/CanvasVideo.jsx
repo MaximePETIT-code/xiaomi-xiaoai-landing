@@ -20,8 +20,6 @@ export const CanvasVideo = forwardRef(
 
     const isMobile = useScreenSize(990);
 
-    console.log(isMobile)
-
     const frames = useMemo(
       () =>
         new Array(count).fill(0).map((_, i) => {
@@ -31,7 +29,6 @@ export const CanvasVideo = forwardRef(
           image.src = `${BASE_URL}/${width},${quality},f_auto${folder}product${
             isMobile ? "-mobile" : ""
           }${(i + 1).toString().padStart(pad, "0")}.${extension}`;
-
           return image;
         }),
       [count, pad, folder, extension, isMobile]

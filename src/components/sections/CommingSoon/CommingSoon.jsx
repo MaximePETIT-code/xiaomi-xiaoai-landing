@@ -15,7 +15,6 @@ export default function CommingSoon() {
   const buttonRef = useRef(null);
 
   useEffect(() => {
-    console.log(buttonRef);
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: animatedTitleRef.current,
