@@ -27,9 +27,13 @@
       left: 50%;
       transform: translate(-50%, -50%);
       width: 1002px;
+      max-width: 100vw;
       height: 601px;
       background-image: repeating-linear-gradient(rgba(26, 40, 65, 0.8) 0 2px, transparent 1px 100%), repeating-linear-gradient(90deg, rgba(26, 40, 65, 0.8) 0 2px, transparent 1px 100%);
       background-size: 200px 200px;
+      @media screen and (max-width: 990px) {
+        background-size: 0 0;
+      }
     }
   }
 }
