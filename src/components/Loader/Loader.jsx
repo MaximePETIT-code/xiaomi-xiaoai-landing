@@ -1,12 +1,11 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import PropTypes from "prop-types";
 import styles from "./Loader.module.scss";
 
 export default function Loader({ showLoader }) {
   const loaderRef = useRef(null);
   const logoRef = useRef(null);
-
-  console.log(showLoader);
 
   useEffect(() => {
     gsap.fromTo(
@@ -21,7 +20,7 @@ export default function Loader({ showLoader }) {
       gsap.fromTo(
         loaderRef.current,
         { opacity: 1 },
-        { opacity: 0, duration: 1 }
+        { opacity: 0, duration: 0.5, ease:"power2.out" }
       );
   }, [showLoader]);
 
@@ -45,3 +44,7 @@ export default function Loader({ showLoader }) {
     </div>
   );
 }
+
+Loader.propTypes = {
+  showLoader: PropTypes.bool.isRequired,
+};
