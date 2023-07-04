@@ -1,9 +1,13 @@
 .hero {
+  @media screen and (max-width: 990px) {
+    height: 100dvh;
+    margin-bottom: 54dvh;
+  }
 
   &__content {
     position: fixed;
     z-index: 3;
-    width: 100%;
+    width: 100vw;
     font-size: 5vw;
 
     @media screen and (max-width: 990px) {
@@ -24,11 +28,23 @@
     position: fixed;
     top: -60px;
     left: -3px;
+    @media screen and (max-width: 990px) {
+      position: absolute;
+      height: 100dvh;
+      width: 100dvw;
+    }
 
     img {
       width: 100vw;
       position: absolute;
+      @media screen and (max-width: 990px) {
+        bottom: 0;
+      }
       z-index: 2;
+
+      &:nth-child(2){
+        z-index: 3;
+      }
     }
 
     img.hero__productAnimation__background {

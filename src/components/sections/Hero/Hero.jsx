@@ -34,19 +34,15 @@ export default function Hero({ setSmoothScroll, isPageLoaded }) {
   }, [isMobile]);
 
   useEffect(() => {
-    if (isPageLoaded && !isMobile) {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: heroRef.current,
-        },
-      });
+    if (isPageLoaded) {
+      const tl = gsap.timeline();
 
-      !isMobile && tl.fromTo(
+      tl.fromTo(
         productBlackRef.current,
         { y: "600px", scale: 0.9, opacity: 0 },
         {
           y: 0,
-          scale: 1,
+          scale: `${!isMobile ? 1 : 4}`,
           opacity: 1,
           duration: 1.5,
           ease: "power2.out",
@@ -59,7 +55,7 @@ export default function Hero({ setSmoothScroll, isPageLoaded }) {
           {
             opacity: 1,
             y: 0,
-            scale: 1,
+            scale: `${!isMobile ? 1 : 4}`,
             duration: 1.5,
             ease: "power2.out",
             stagger: 0.2,
@@ -108,36 +104,38 @@ export default function Hero({ setSmoothScroll, isPageLoaded }) {
         </h1>
       </div>
 
-      {!isMobile && (
-        <div ref={productAnimationRef} className="hero__productAnimation">
-          <img
-            ref={productWhiteRef}
-            src="https://res.cloudinary.com/dvx9zz0jq/image/upload/q_auto:good,e_sharpen,w_1920,f_auto/xiaomi/pictures/product_white.png"
-          />
-          <img
-            ref={productBlackRef}
-            src="https://res.cloudinary.com/dvx9zz0jq/image/upload/q_auto:good,e_sharpen,w_1920,f_auto/xiaomi/pictures/product_black.png"
-          />
-          <img
-            ref={productOrangeRef}
-            src="https://res.cloudinary.com/dvx9zz0jq/image/upload/q_auto:good,e_sharpen,w_1920,f_auto/xiaomi/pictures/product_orange.png"
-          />
+      <div ref={productAnimationRef} className="hero__productAnimation">
+        <img
+          ref={productWhiteRef}
+          src="https://res.cloudinary.com/dvx9zz0jq/image/upload/q_auto:good,e_sharpen,w_1920,f_auto/xiaomi/pictures/product_white.png"
+        />
+        <img
+          ref={productBlackRef}
+          src="https://res.cloudinary.com/dvx9zz0jq/image/upload/q_auto:good,e_sharpen,w_1920,f_auto/xiaomi/pictures/product_black.png"
+        />
+        <img
+          ref={productOrangeRef}
+          src="https://res.cloudinary.com/dvx9zz0jq/image/upload/q_auto:good,e_sharpen,w_1920,f_auto/xiaomi/pictures/product_orange.png"
+        />
+        {!isMobile && (
           <img
             className="hero__productAnimation__background"
             src="https://res.cloudinary.com/dvx9zz0jq/image/upload/q_auto:good,e_sharpen,w_1920,f_auto/xiaomi/pictures/product_background.png"
           />
+        )}
+      </div>
+
+      {!isMobile && (
+        <div ref={videoOnScrollRef} className="hero__videoOnScroll">
+          <VideoOnScroll
+            folder="/xiaomi/sequence-01/"
+            count={90}
+            extension="png"
+            pad={2}
+            setSmoothScroll={setSmoothScroll}
+          />
         </div>
       )}
-
-      <div ref={videoOnScrollRef} className="hero__videoOnScroll">
-        <VideoOnScroll
-          folder="/xiaomi/sequence-01/"
-          count={90}
-          extension="png"
-          pad={2}
-          setSmoothScroll={setSmoothScroll}
-        />
-      </div>
     </section>
   );
 }

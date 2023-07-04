@@ -26,11 +26,11 @@ export default function DoubleImage({ srcs = [] }) {
       tl.fromTo(
         imageRef.current,
         { y: 0 },
-        { y: `${!isMobile ? '-100px' : '-60px'}`, ease: 'none' },
+        { y: `${!isMobile ? '-100px' : '-10px'}`, ease: 'none' },
         0
       );
     });
-  }, []);
+  }, [isMobile]);
 
   return (
     <div ref={containerRef} className={styles.doubleImage}>
