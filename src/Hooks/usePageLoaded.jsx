@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 
-function usePageLoaded(delay = 1500) {
+// Don't use overflow: hidden to prevent skipping effect
+function preventScroll(event) {
+  event.preventDefault();
+  window.scrollTo(0, 0);
+}
+
+function usePageLoaded(delay = 1000) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -9,11 +15,11 @@ function usePageLoaded(delay = 1500) {
     const handleLoad = () => {
       timeoutId = setTimeout(() => {
         setIsLoaded(true);
-        document.body.style.overflow = "visible";
+        window.removeEventListener("scroll", preventScroll);
       }, delay);
     };
 
-    // document.body.style.overflow = "hidden";
+    window.addEventListener("scroll", preventScroll);
     window.addEventListener("load", handleLoad);
 
     return () => {
