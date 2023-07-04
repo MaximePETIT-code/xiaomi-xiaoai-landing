@@ -2,6 +2,7 @@
   width: 90vw;
   line-height: 1.1;
   margin: 10vh auto 40vh auto;
+
   @media screen and (max-width: 990px) {
     margin: 10vh auto 20vh auto;
   }
@@ -9,9 +10,26 @@
   &__container {
     width: 70%;
     font-size: 4rem;
+
     @media screen and (max-width: 990px) {
       width: 100%;
       font-size: 2rem;
+    }
+  }
+
+  &__doubleImageContainer {
+    position: relative;
+
+    &__grid {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 86.9%;
+      height: 76.5%;
+      background-image: repeating-linear-gradient(rgba(26, 40, 65, 0.8) 0 2px, transparent 1px 100%), repeating-linear-gradient(90deg, rgba(26, 40, 65, 0.8) 0 2px, transparent 1px 100%);
+      background-size: 200px 200px;
     }
   }
 }

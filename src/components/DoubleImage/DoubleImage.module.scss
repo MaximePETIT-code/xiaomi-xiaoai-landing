@@ -9,6 +9,8 @@
 
   &__wrapper{
     overflow: hidden;
+    position: static;
+    z-index: 2;
     &:nth-child(1){
       width: 42.6vw;
       height: 110vh;

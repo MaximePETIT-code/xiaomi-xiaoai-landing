@@ -11,12 +11,15 @@ export default function Introduction() {
           speaker that will revolutionize your audio world!
         </AnimatedTitle>
       </div>
-      <DoubleImage
-        srcs={[
-          "https://res.cloudinary.com/dvx9zz0jq/image/upload/xiaomi/pictures/packshot.png",
-          "https://res.cloudinary.com/dvx9zz0jq/image/upload/xiaomi/pictures/packshot2.png",
-        ]}
-      />
+      <div className={styles.introduction__doubleImageContainer}>
+        <DoubleImage
+          srcs={[
+            "https://res.cloudinary.com/dvx9zz0jq/image/upload/xiaomi/pictures/packshot.png",
+            "https://res.cloudinary.com/dvx9zz0jq/image/upload/xiaomi/pictures/packshot2.png",
+          ]}
+        />
+        <div className={styles.introduction__doubleImageContainer__grid} />
+      </div>
     </section>
   );
 }
